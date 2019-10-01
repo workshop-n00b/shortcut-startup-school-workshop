@@ -1,0 +1,52 @@
+{
+  "name": "shortcut-startup-school-workshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "webpack --mode=production && npm run copy_static_assets",
+    "dev": "webpack && npm run copy_static_assets && concurrently \"webpack --watch\" \"nodemon dist\"",
+    "test-watch": "webpack --config webpack.test.js && concurrently \"webpack --config webpack.test.js --watch\" \"mocha --watch\"",
+    "test": "webpack --config webpack.test.js && mocha",
+    "start": "NODE_ENV=production node dist/index.js",
+    "copy_static_assets": "node copy-assets.js",
+    "lint": "eslint src**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/unmock/shortcut-startup-school-workshop"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "compression": "^1.7.3",
+    "express": "^4.16.4",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-router-dom": "^4.3.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "chai": "^4.2.0",
+    "concurrently": "^3.6.1",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.10.0",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.15.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.10",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
