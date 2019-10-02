@@ -45,7 +45,19 @@ const Topics = ({ match }) => (
 
 const Repository = ({ repo }) => {
   const { name } = repo;
-  return (<div>{name}</div>);
+  return (
+    <div className="repository">
+      <div className="repository__title">
+        {name}
+      </div>
+      <div className="repository__content">
+        <p>
+          Stars:
+{ repo.stargazers_count }
+        </p>
+      </div>
+    </div>
+  );
 };
 
 const App = ({ repositories }) => (
