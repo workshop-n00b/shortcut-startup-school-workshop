@@ -1,5 +1,6 @@
 const stylesheet = `
 .repositories {
+    margin-top: 1rem;
     /* font-size: 3rem;*/
     
 }
@@ -17,6 +18,12 @@ const stylesheet = `
     margin: 1rem;
     padding: 1rem;
     color: #87CEEB;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.repository__link {
+    text-decoration: none;
 }
 
 .repository__title {

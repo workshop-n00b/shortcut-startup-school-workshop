@@ -46,17 +46,21 @@ const Topics = ({ match }) => (
 const Repository = ({ repo }) => {
   const { name } = repo;
   return (
-    <div className="repository">
-      <div className="repository__title">
-        {name}
+    
+      <div className="repository">
+        <a href={repo.html_url} className="repository__link">
+        <div className="repository__title">
+          {name}
+        </div>
+        <div className="repository__content">
+          <p>
+            Stars:
+  { repo.stargazers_count }
+          </p>
+        </div>
+        </a>
       </div>
-      <div className="repository__content">
-        <p>
-          Stars:
-{ repo.stargazers_count }
-        </p>
-      </div>
-    </div>
+    
   );
 };
 
