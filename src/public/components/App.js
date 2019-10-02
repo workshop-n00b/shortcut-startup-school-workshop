@@ -43,25 +43,20 @@ const Topics = ({ match }) => (
   </div>
 );
 
-const App = () => (
-  <div>
-    <ul>
-      <li>
-        <Link to="/">Home</Link>
-      </li>
-      <li>
-        <Link to="/about">About</Link>
-      </li>
-      <li>
-        <Link to="/topics">Topics</Link>
-      </li>
-    </ul>
+const Repository = ({ repo }) => {
+  const { name } = repo;
+  return (<div>{name}</div>);
+};
 
-    <hr />
+const App = ({ repositories }) => (
 
-    <Route exact path="/" component={Home} />
-    <Route path="/about" component={About} />
-    <Route path="/topics" component={Topics} />
+  <div className="repositories">
+    <div className="repositories__title">
+      My GitHub repositories
+    </div>
+    <div className="repositories__content">
+      { repositories.map((repo) => <Repository repo={repo} />)}
+    </div>
   </div>
 );
 

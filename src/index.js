@@ -2,9 +2,13 @@ import compression from 'compression';
 import express from 'express';
 import path from 'path';
 import React from 'react';
+import axios from 'axios';
 import ReactDOMServer from 'react-dom/server';
 import { StaticRouter as Router } from 'react-router-dom';
 import App from './public/components/App';
+import stylesheet from './public/styles/stylesheet';
+
+require('dotenv').config();
 
 const app = express();
 
@@ -51,6 +55,53 @@ app.use('/static', express.static(path.resolve(__dirname, 'public')));
   })
 }) */
 
+const instance = axios.create({
+  baseURL: 'https://api.github.com',
+  timeout: 1000,
+  headers: {
+    Accept: 'application/vnd.github.v3+json',
+    Authorization: `token ${process.env.GITHUB_TOKEN}`,
+  },
+});
+
+const fetchGitHubRepos = async () => {
+  const axiosResult = await instance.get('/user/repos');
+  const { data } = axiosResult;
+  console.log(data);
+  return data;
+};
+
+app.get('/', async (req, res) => {
+  try {
+    const repos = await fetchGitHubRepos();
+
+    const component = ReactDOMServer.renderToString(
+      <App repositories={repos} />,
+    );
+
+    const html = `
+  <!doctype html>
+    <html>
+    <head>
+      <link rel='shortcut icon' type='image/x-icon' href='/static/favicon.ico' />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <style>${stylesheet}</style>
+    </head>
+    <body>
+      <div id="root">${component}</div>
+      <script src="/static/vendors~app.js"></script>
+    </body>
+    </html>
+  `;
+
+    res.send(html);
+  } catch (err) {
+    res.sendStatus(500);
+  }
+});
+
+/*
 app.get('*', (req, res) => {
   const context = {};
 
@@ -84,6 +135,7 @@ app.get('*', (req, res) => {
     res.send(html);
   }
 });
+*/
 
 app.get('*', (req, res) => res
   .status(404)
