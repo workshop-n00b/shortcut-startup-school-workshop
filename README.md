@@ -37,6 +37,8 @@ Note that running tests **should not require a GitHub access token**: they shoul
 
 1. Forking the repository
 1. Getting the application to run locally
+1. Make any pull request to **your fork**, approve and merge 🦄
+1. Make a pull-request to `unmock/shortcut-startup-school-workshop`
 
 ### 10.30 - 10.40
 
