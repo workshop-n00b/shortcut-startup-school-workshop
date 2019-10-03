@@ -1,4 +1,4 @@
-# [Shortcut School of Startups Workshop](https://www.unmock.io/shortcut-startup-school-workshop/)
+# [Shortcut School of Startups Workshop](https://unmock.github.io/shortcut-startup-school-workshop/#/title)
 
 [![CircleCI](https://circleci.com/gh/unmock/shortcut-startup-school-workshop.svg?style=svg)](https://circleci.com/gh/unmock/shortcut-startup-school-workshop)
 
