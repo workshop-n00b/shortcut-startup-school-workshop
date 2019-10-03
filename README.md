@@ -23,6 +23,38 @@ Run tests:
 $ yarn test
 ```
 
-Everything is skipped because they're not implemented yet: we'll do that!
+Everything is skipped because nothing's implemented yet: we'll do that!
 
 Note that running tests **should not require a GitHub access token**: they should use [Unmock](https://unmock.io).
+
+## Workshop agenda
+
+### 9.50 - 10.05
+
+1. Introduction to testing, CI/CD, and what we'll do
+
+### 10.05 - 10.30
+
+1. Forking the repository
+1. Getting the application to run locally
+
+### 10.30 - 10.40
+
+1. Logging into CircleCI
+1. Adding CircleCI to the project
+
+### 10.40 - 11.15
+
+1. Introduction to Unmock
+1. Writing tests for our application
+
+### 11.15 - 11.50
+
+1. Time for hacking away and asking questions
+1. Ideas:
+   - Add test reporter
+   - Add continuous deployment to Heroku
+
+## Disclaimer
+
+Note that the application server renders static markup and does not attempt to [hydrate](https://reactjs.org/docs/react-dom.html#hydrate) the markup. So adding event listeners etc. will fail. If you want to add interactivity, client-side routing, and/or more complex logic on what to fetch in server and in client, you might want to take a look at a framework like [Next.js](https://nextjs.org/).
