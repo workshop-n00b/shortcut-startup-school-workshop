@@ -47,13 +47,62 @@
 
         <section id="cicd" data-markdown>
           <textarea data-template>
-			### What is CI/CD
+      ### What is CI/CD
+      
+      - Continuous integration and deployment/delivery
+			</textarea
+          >
+        </section>
+        <section id="ci" data-markdown>
+          <textarea data-template>
+      ### Continuous integration
+      
+      - Merge changes to master branch every day
+      - Validate all changes by creating a build and running automated tests
+      - Big emphasis on **testing automation**
+
+			</textarea
+          >
+        </section>
+        <section id="cd" data-markdown>
+          <textarea data-template>
+      ### Continuous deployment
+      
+      - Deploy changes for every change in the master branch
+      - Could consist of many steps:
+        1. Deploy first to a **test environment**
+        1. Deploy to (pre-)production manually or once integration tests pass
+
+			</textarea
+          >
+        </section>
+        <section id="why-ci" data-markdown>
+          <textarea data-template>
+      #### Continuous integration encourages frequent automated testing
+      
+        - Less bugs
+        - Faster release cycle
+        - More developer confidence
+
+			</textarea
+          >
+        </section>
+        <section id="solutions-ci" data-markdown>
+          <textarea data-template>
+      ### Solutions
+      
+        - [CircleCI](https://circleci.com)
+        - [Travis CI](https://travis-ci.org/)
+        - [GitHub actions](https://github.com/features/actions)
+        - [Jenkins](https://jenkins.io/)
+        - [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/)
+
 			</textarea
           >
         </section>
         <section id="app" data-markdown>
           <textarea data-template>
-			### Our app
+			### Example application
 
 			1. (Web) application showing your GitHub repositories
 			1. Express server with server-side rendering (React)
