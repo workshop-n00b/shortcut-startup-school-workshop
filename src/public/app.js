@@ -3,13 +3,7 @@
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
 import App from './components/App';
 
-const AppWithRouter = () => (
-  <Router>
-    <App />
-  </Router>
-);
-
-ReactDOM.hydrate(<AppWithRouter />, document.getElementById('root'));
+// Note: this is broken, the data would need to be passed to the client to properly hydrate the dom.
+ReactDOM.hydrate(<App />, document.getElementById('root'));
