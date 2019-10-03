@@ -54,7 +54,9 @@ Note that running tests **should not require a GitHub access token**: they shoul
 
 1. Time for hacking away and asking questions
 1. Ideas:
+
    - Add test reporter
+   - Add support for fetching all GitHub repositories
    - Add continuous deployment to Heroku
 
 ## Disclaimer

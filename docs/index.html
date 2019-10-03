@@ -51,7 +51,39 @@
 			</textarea
           >
         </section>
+        <section id="app" data-markdown>
+          <textarea data-template>
+			### Our app
 
+			1. (Web) application showing your GitHub repositories
+			1. Express server with server-side rendering (React)
+			1. Uses GitHub REST API for fetching repos
+
+			</textarea
+          >
+        </section>
+        <section id="ssr" data-markdown>
+          <textarea data-template>
+			### Server-side rendering
+
+  1. Render HTML in the server
+    - Less JS in the client
+  1. Good:
+    - SEO
+    - Simpler architecture (no separate backend)
+  1. Bad:
+    - First loading time can be long
+    - Added complexity in routing and data fetching (see [Next.js](https://nextjs.org/))
+
+			</textarea
+          >
+        </section>
+        <section id="app-tour" data-markdown>
+          <textarea data-template>
+			### Tour of the app
+			</textarea
+          >
+        </section>
         <section id="testing" data-markdown>
           <textarea data-template>
 			### Introduction to testing
@@ -63,31 +95,19 @@
           <textarea data-template>
 						### Testing
 						Eric Elliott [says](https://www.sitepoint.com/javascript-testing-unit-functional-integration/):
-						- *Unit tests* ensure that individual components of the app work as expected.
-						- *Integration tests* ensure that component collaborations work as expected.
-						- *Functional tests* ensure that the app works as expected from the user’s perspective.
+						- **Unit tests** ensure that individual components of the app work as expected.
+						- **Integration tests** ensure that component collaborations work as expected.
+						- **Functional tests** ensure that the app works as expected from the user’s perspective.
 					 </textarea
           >
         </section>
         <section id="testing-apis" data-markdown>
           <textarea data-template>
-			### Testing APIs
-			Using real APIs in tests is not recommended:
+			### Integration testing
+			Using production APIs in tests is not a good idea:
 			- Production data should be decoupled from tests
 			- Costs and rate-limits
 			- Bugs in code could have [drastic side-effects](https://dev.to/adamwknox/i-made-a-mistake-implementing-a-react-hook-and-got-a-denial-of-service-from-my-backend-5cji)
-			</textarea
-          >
-        </section>
-        <section id="testing-stragies" data-markdown>
-          <textarea data-template>
-				### Testing strategies
-				1. [Don't mock what you don't own](https://github.com/testdouble/contributing-tests/wiki/Don't-mock-what-you-don't-own)
-				1. Mock
-					- [external libraries](https://github.com/ctimmerm/axios-mock-adapter)
-					- [your own modules](https://jestjs.io/docs/en/manual-mocks#mocking-user-modules)
-				1. [Dependency injection](https://en.wikipedia.org/wiki/Dependency_injection)
-				1. [unmock](https://www.unmock.io/)
 			</textarea
           >
         </section>

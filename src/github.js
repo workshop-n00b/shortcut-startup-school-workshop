@@ -44,6 +44,7 @@ const transform = (repository) => ({
  * Fetch all GitHub repositories for the authenticated user.
  * Removes private and forked repositories.
  * Maps repositories to internal, simpler data format.
+ * Note: returns only the first result, NOT all of the user's repositories.
  * API documentation: https://developer.github.com/v3/repos/
  * @returns List of authenticated user's public repositories
  */
