@@ -1,8 +1,10 @@
-# [Shortcut School of Startups Workshop](https://unmock.github.io/shortcut-startup-school-workshop/#/title)
+# [Shortcut School of Startups Workshop](https://unmock.github.io/shortcut-startup-school-workshop/#/welcome)
 
 [![CircleCI](https://circleci.com/gh/unmock/shortcut-startup-school-workshop.svg?style=svg)](https://circleci.com/gh/unmock/shortcut-startup-school-workshop)
 
 This is a Node.js application running an [Express](https://expressjs.com/) server and using [React](https://reactjs.org/) for server-side rendering. The application displays a list of **your** GitHub repositories (that's you, the developer).
+
+Accompanying slides can be found [here](https://unmock.github.io/shortcut-startup-school-workshop/#/welcome).
 
 ## Instructions
 
@@ -29,32 +31,49 @@ Note that running tests **should not require a GitHub access token**: they shoul
 
 ## Workshop agenda
 
-### 9.50 - 10.05
+### <u>Part 1: Getting started</u>
 
-1. Introduction to testing, CI/CD, and what we'll do
+#### 9.50 - 10.20
 
-### 10.05 - 10.30
+1. SSR 101
+1. Tour of the app
 
-1. Forking the repository
-1. Getting the application to run locally
+Hands-on:
+
+1. Fork the repository
+1. Get the application to run locally
 1. Make any pull request to **your fork**, "approve" and merge 🦄
 1. Make a pull request to `unmock/shortcut-startup-school-workshop`
 
-### 10.30 - 10.40
+### <u>Part 2: CI/CD</u>
 
-1. Logging into CircleCI
-1. Adding CircleCI to the project
+#### 10.20 - 10.40
 
-### 10.40 - 11.15
+1. Introduction to CI/CD
 
-1. Introduction to Unmock
+Hands-on:
+
+1. Log into CircleCI
+1. Add CircleCI to your fork
+1. Add command to run tests
+
+### <u>Part 3: Testing</u>
+
+#### 10.40 - 11.30
+
+1. Slides
+1. Tour of Unmock
+
+Hands-on:
+
 1. Writing tests for our application
 
-### 11.15 - 11.50
+### <u>Part 4: Hacking</u>
 
-1. Time for hacking away and asking questions
+#### 11.30 - 11.50
+
+1. Hack away and ask questions
 1. Ideas:
-
    - Add test reporter
    - Add support for fetching all GitHub repositories
    - Add continuous deployment to Heroku
