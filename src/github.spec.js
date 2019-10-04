@@ -1,4 +1,4 @@
-/* global describe, beforeAll, afterAll, beforeEach, it, expect */
+/* global describe, beforeAll, afterAll, afterEach, beforeEach, it, expect */
 import unmock, { runner, sinon, transform } from 'unmock';
 import fetchGitHubRepos from './github';
 
@@ -45,6 +45,6 @@ describe('Fetching GitHub repositories', () => {
       expect(repo).toHaveProperty('stars');
     });
   }));
-  it.todo('filters forks away');
+  it.todo('should not return private repositories');
   it.todo('filters forks away');
 });

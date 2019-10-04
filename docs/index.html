@@ -155,9 +155,20 @@
           >
         </section>
 
+        <section id="testing-why" data-markdown>
+          <textarea data-template>
+### Why tests?
+- Ensure your code works as expected now and **in future**
+- Alleviate the fear of breaking stuff
+  - Makes refactoring easier
+- Tests act as documentation
+					 </textarea
+          >
+        </section>
+
         <section id="types-of-tests" data-markdown>
           <textarea data-template>
-### Testing
+### Types of tests
 Eric Elliott [says](https://www.sitepoint.com/javascript-testing-unit-functional-integration/):
 - **Unit tests** ensure that individual components of the app work as expected.
 - **Integration tests** ensure that component collaborations work as expected.
@@ -172,6 +183,35 @@ Using production APIs in tests is not a good idea:
 - Production data should be decoupled from tests
 - Costs and rate-limits
 - Bugs in code could have [drastic side-effects](https://dev.to/adamwknox/i-made-a-mistake-implementing-a-react-hook-and-got-a-denial-of-service-from-my-backend-5cji)
+			</textarea
+          >
+        </section>
+        <section id="unmock-101" data-markdown>
+          <textarea data-template>
+### Unmock
+- Open source library for mocking HTTP traffic
+- Get started:
+<pre>
+  <code class="language-bash">$ yarn add unmock -D
+$ yarn add @unmock/githubv3 -D # Add GitHub v3 service for mocking
+  </code>
+</pre>
+- Read the docs: [unmock.io/docs](https://www.unmock.io/docs/introduction)
+			</textarea
+          >
+        </section>
+        <section id="unmock-jest" data-markdown>
+          <textarea data-template>
+### Unmock test reporter
+- Create a HTML report of tests and their HTTP calls
+<pre><code class="language-bash">$ yarn add unmock-jest -D</code></pre>
+- Add as reporter:
+<pre>
+  <code class="language-json">// jest.config.js
+{ reporters: ["default", "unmock-jest/reporter"] }
+  </code>
+</pre>
+- [Docs](https://www.unmock.io/docs/jest-reporter)
 			</textarea
           >
         </section>
