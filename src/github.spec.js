@@ -1,5 +1,7 @@
 /* global describe, beforeAll, afterAll, afterEach, beforeEach, it, expect */
-import unmock, { runner, sinon, transform } from 'unmock';
+import unmock, {
+  Arr, runner, sinon, transform,
+} from 'unmock';
 import fetchGitHubRepos from './github';
 
 process.env.GITHUB_TOKEN = 'fake';
@@ -46,9 +48,23 @@ describe('Fetching GitHub repositories', () => {
     });
   }));
   it('should not return private repositories', runner(async () => {
-    githubv3.state(transform.withCodes(200));
-    githubv3.state(transform.responseBody({ lens: ['private'] }).const(true));
+    githubv3.state(
+      transform.withCodes(200),
+      transform.responseBody({ lens: [Arr, 'private'] }).const(true),
+    );
     const repos = await fetchGitHubRepos();
     expect(repos).toHaveLength(0);
   }));
+  // TODO Is there a bug here, "private" field can be undefined
+  // even after setting the state?
+  it.skip('should return all public repositories',
+    runner(async () => {
+      githubv3.state(
+        transform.withCodes(200),
+        transform.responseBody({ lens: [Arr, 'private'] }).const(false),
+      );
+      const repos = await fetchGitHubRepos();
+      const response = githubv3.spy.getResponseBodyAsJson();
+      expect(repos).toHaveLength(response.length);
+    }));
 });
