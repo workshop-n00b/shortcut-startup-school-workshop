@@ -28,10 +28,19 @@ const axiosClient = () => {
 };
 
 /**
- * Remove any unnecessary fields from the GitHub repository response
+ * A repository object.
+ * @typedef {Object<string, any>} Repository
+ * @property {string} name The name of the repository.
+ * @property {string} url URL to the repository.
+ * @property {string} description Project description
+ * @property {number} stars Number of users
+ */
+
+/**
+ * Remove any unnecessary fields from the GitHub repository response.
  * https://developer.github.com/v3/repos/
  * @param repository GitHub repository response object
- * @returns Transformed repository object
+ * @returns {Repository} object
  */
 const transform = (repository) => ({
   name: repository.full_name,
@@ -46,7 +55,7 @@ const transform = (repository) => ({
  * Maps repositories to internal, simpler data format.
  * Note: returns only the first result, NOT all of the user's repositories.
  * API documentation: https://developer.github.com/v3/repos/
- * @returns List of authenticated user's public repositories
+ * @returns {Promise<Repository[]>} List of authenticated user's public repositories
  */
 const fetchGitHubRepos = async () => {
   const client = axiosClient();
