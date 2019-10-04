@@ -18,7 +18,11 @@ describe('Fetching GitHub repositories', () => {
     unmock.off();
   });
 
-  it('returns an array of repositories', async () => {
+  beforeEach(() => {
+    githubv3.state(transform.withCodes(200));
+  });
+
+  it('finds repositories', async () => {
     const repos = await fetchGitHubRepos();
     expect(Array.isArray(repos)).toBe(true);
   });
