@@ -1,5 +1,5 @@
 /* global describe, beforeAll, afterAll, beforeEach, it, expect */
-import unmock, { sinon, transform } from 'unmock';
+import unmock, { runner, sinon, transform } from 'unmock';
 import fetchGitHubRepos from './github';
 
 process.env.GITHUB_TOKEN = 'fake';
@@ -36,7 +36,15 @@ describe('Fetching GitHub repositories', () => {
     const requestPath = githubv3.spy.getRequestPath();
     expect(requestPath).toBe('/user/repos');
   });
-  it.todo('transforms repositories correctly');
+  it('should transform repositories correctly', runner(async () => {
+    const repos = await fetchGitHubRepos();
+    repos.forEach((repo) => {
+      expect(repo).toHaveProperty('name');
+      expect(repo).toHaveProperty('url');
+      expect(repo).toHaveProperty('description');
+      expect(repo).toHaveProperty('stars');
+    });
+  }));
   it.todo('filters forks away');
   it.todo('filters forks away');
 });
