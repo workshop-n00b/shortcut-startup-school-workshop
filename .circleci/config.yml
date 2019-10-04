@@ -28,6 +28,9 @@ jobs:
           name: "Build"
           command: yarn build
       - run:
+          name: "Run lint"
+          command: yarn lint
+      - run:
           name: "Run tests"
           command: yarn test
 
