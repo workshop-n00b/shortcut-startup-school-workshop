@@ -9,7 +9,7 @@ describe.skip('Fetching GitHub repositories', () => {
     const repos = await fetchGitHubRepos();
     expect(repos.length).toBeGreaterThan(0);
   });
-  it.skip('transforms repositories correctly');
-  it.skip('filters forks away');
-  it.skip('filters forks away');
+  it.todo('transforms repositories correctly');
+  it.todo('filters forks away');
+  it.todo('filters forks away');
 });
