@@ -45,6 +45,10 @@ describe('Fetching GitHub repositories', () => {
       expect(repo).toHaveProperty('stars');
     });
   }));
-  it.todo('should not return private repositories');
-  it.todo('filters forks away');
+  it('should not return private repositories', runner(async () => {
+    githubv3.state(transform.withCodes(200));
+    githubv3.state(transform.responseBody({ lens: ['private'] }).const(true));
+    const repos = await fetchGitHubRepos();
+    expect(repos).toHaveLength(0);
+  }));
 });
