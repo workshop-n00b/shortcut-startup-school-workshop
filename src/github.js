@@ -64,8 +64,7 @@ const fetchGitHubRepos = async () => {
   const { data } = axiosResult;
   logger.info(`Found ${data.length} repositories`);
   return data
-    .filter((repository) => repository.private === false)
-    .filter((repository) => repository.fork === false)
+    .filter((repository) => repository.private === false) // TODO Add a filter for forks
     .map((repository) => transform(repository));
 };
 
