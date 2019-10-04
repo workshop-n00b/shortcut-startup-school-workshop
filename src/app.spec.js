@@ -1,18 +1,38 @@
+import unmock, { sinon, transform } from 'unmock';
 import buildApp from './app';
 const request = require('supertest');
 
+process.env.GITHUB_TOKEN = 'fake';
+
+let githubv3;
+
 describe('Express app', () => {
   const app = buildApp();
-  describe('/api endpoint', () => {
-    it('should return an array', () => {
-      request(app)
-        .get('/user')
-        .expect('Content-Type', /json/)
-        .expect('Content-Length', '15')
-        .expect(200)
-        .end((err, res) => {
-          if (err) throw err;
-        });
+
+  beforeAll(() => {
+    // Activate Unmock to intercept requests
+    unmock.on();
+    // Access the `githubv3` service added from `@unmock/githubv3` package
+    githubv3 = unmock.services.githubv3;
+  });
+
+  afterAll(() => {
+    unmock.off();
+  });
+
+  describe('/api/repositories endpoint', () => {
+    beforeEach(() => {
+      githubv3.state(transform.withCodes(200));
+    });
+
+    afterEach(() => {
+      unmock.reset();
+    });
+    it('should return an array', async () => {
+      const response = await request(app)
+        .get('/api/repositories')
+        .expect(200);
+      expect(Array.isArray(response.body)).toBeTruthy();
     });
   });
 });
