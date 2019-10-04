@@ -1,3 +1,4 @@
+/* global describe, beforeAll, afterAll, beforeEach, it, expect */
 import buildApp from './app';
 const request = require('supertest');
 
