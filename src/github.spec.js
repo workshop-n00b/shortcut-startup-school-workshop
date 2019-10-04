@@ -1,5 +1,5 @@
-/* global describe, beforeAll, afterAll, beforeEach, it, expect */
-import fetchGitHubRepos from './github';
+/* global describe, beforeAll, afterAll, beforeEach, it, expect */  // eslint-disable-line
+// import fetchGitHubRepos from './github';
 
 process.env.GITHUB_TOKEN = 'fake';
 

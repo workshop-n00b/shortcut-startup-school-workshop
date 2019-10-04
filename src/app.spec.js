@@ -1,4 +1,4 @@
-/* global describe, beforeAll, afterAll, beforeEach, it, expect */
+/* global describe, beforeAll, afterAll, beforeEach, it, expect */  // eslint-disable-line
 // import buildApp from './app';
 // const request = require('supertest');
 
