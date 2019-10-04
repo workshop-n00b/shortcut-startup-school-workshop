@@ -52,6 +52,7 @@
     "mocha": "^5.2.0",
     "nodemon": "^1.18.10",
     "prettier": "^1.18.2",
+    "supertest": "^4.0.2",
     "unmock": "^0.3.8",
     "webpack": "^4.29.5",
     "webpack-cli": "^3.2.3",
