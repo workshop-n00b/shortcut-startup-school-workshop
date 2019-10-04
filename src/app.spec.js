@@ -1,5 +1,5 @@
-/* global describe, beforeAll, afterAll, beforeEach, it, expect */  // eslint-disable-line
-import unmock, { sinon, transform } from 'unmock';
+/* global describe, beforeAll, afterAll, afterEach, beforeEach, it, expect */  // eslint-disable-line
+import unmock, { transform } from 'unmock';
 import buildApp from './app';
 const request = require('supertest');
 
