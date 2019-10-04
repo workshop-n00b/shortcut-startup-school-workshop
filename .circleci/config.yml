@@ -14,7 +14,9 @@ jobs:
       - checkout
       - run: yarn
       - run: yarn build
-      # [task] Add test command here
+      - run:
+          name: "Run tests"
+          command: yarn test
 
 workflows:
   version: 2
