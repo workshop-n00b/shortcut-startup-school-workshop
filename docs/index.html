@@ -175,6 +175,35 @@ Using production APIs in tests is not a good idea:
 			</textarea
           >
         </section>
+        <section id="unmock-101" data-markdown>
+          <textarea data-template>
+### Unmock
+- Open source library for mocking HTTP traffic
+- Get started:
+<pre>
+  <code class="language-bash">$ yarn add unmock -D
+$ yarn add @unmock/githubv3 -D # Add GitHub v3 service for mocking
+  </code>
+</pre>
+- Read the docs: [unmock.io/docs](https://www.unmock.io/docs/introduction)
+			</textarea
+          >
+        </section>
+        <section id="unmock-jest" data-markdown>
+          <textarea data-template>
+### Unmock test reporter
+- Create a HTML report of tests and their HTTP calls
+<pre><code class="language-bash">$ yarn add unmock-jest -D</code></pre>
+- Add as reporter:
+<pre>
+  <code class="language-json">// jest.config.js
+{ reporters: ["default", "unmock-jest/reporter"] }
+  </code>
+</pre>
+- Read [more](https://www.unmock.io/docs/jest-reporter)
+			</textarea
+          >
+        </section>
         <!--
         <section id="experiment">
           <section class="my-class">
